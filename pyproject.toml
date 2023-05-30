@@ -1,3 +1,33 @@
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "energy_diagram"
+version = "0.3"
+authors = [
+  { name="Caio Porto", email="author@gmail.com" },
+]
+description = "Flexible packge for creating energy profile diagrams in chemistry. "
+readme = "README.md"
+requires-python = ">=3.4"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Natural Language :: English",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/cmporto/chem-energy-diagrams"
+"Bug Tracker" = "https://github.com/cmporto/chem-energy-diagrams/issues"
