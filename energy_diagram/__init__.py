@@ -1,1 +1,1 @@
-from energy_diagram import energy_diagram
+from energy_diagram.energy_diagram import EnergyDiagram
