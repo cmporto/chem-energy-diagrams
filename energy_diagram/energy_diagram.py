@@ -323,7 +323,7 @@ class EnergyDiagram:
             #                 / minus a percentage of the level size      /   / position of the beginning of the level                        /
             ID2_level_begin = -self.level_size * (self.link_end_offset - 1) + (self.level_size + self.space)*self.positions[self.links[i][ID2]] 
             
-            self.ax.plot([ID1_end, ID2_begin],
+            self.ax.plot([ID1_level_end, ID2_level_begin],
                          [self.energy[self.links[i][ID1]],self.energy[self.links[i][ID2]]],
                          color=self.link_colors[i],
                          linestyle=self.link_linestyle[i],
