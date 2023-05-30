@@ -413,4 +413,4 @@ class EnergyDiagram:
         self.ax.set(xlabel=x_axis_label, ylabel=y_axis_label, title=fig_title)
             
             
-        return fig, ax
+        return self.fig, self.ax
