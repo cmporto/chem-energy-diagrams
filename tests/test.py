@@ -1,5 +1,10 @@
+import sys
+
+sys.path.insert(0,'..')
+
 import matplotlib
 from matplotlib import pyplot as plt
+# from ..energy_diagram import EnergyDiagram
 import energy_diagram as ed
 
 
@@ -21,29 +26,29 @@ ground_state -= ground_state
 
 # round_to = 3
 #f'{ground_state:.2f}'
-diagram.energy_level(ground_state,  0,  level_color='k') #k')
-diagram.energy_level(TS4,           1,  level_color='k') #b')
-diagram.energy_level(TS3,           2,  level_color='k') #r')
-diagram.energy_level(TS2_2_fwd,     3,  level_color='k') #y')
-diagram.energy_level(TS1_2_rev,     3,  level_color='k') #y')
-diagram.energy_level(TS1_2_fwd_fwd, 4,  level_color='k') #g')
-diagram.energy_level(GSfinal,       5,  level_color='k') #k')
+diagram.energy_level(ground_state,  0,  color='k') #k')
+diagram.energy_level(TS4,           1,  color='k') #b')
+diagram.energy_level(TS3,           2,  color='k') #r')
+diagram.energy_level(TS2_2_fwd,     3,  color='k') #y')
+diagram.energy_level(TS1_2_rev,     3,  color='k') #y')
+diagram.energy_level(TS1_2_fwd_fwd, 4,  color='k') #g')
+diagram.energy_level(GSfinal,       5,  color='k') #k')
 
-diagram.add_text_to_level(ground_state,  f'{ground_state:.1f}',  text_position=0)
-diagram.add_text_to_level(TS4,           f'{TS4:.1f}',           text_position=1)
-diagram.add_text_to_level(TS3,           f'{TS3:.1f}',           text_position=2)
-diagram.add_text_to_level(TS2_2_fwd,     f'{TS2_2_fwd:.1f}',     text_position=3)
-diagram.add_text_to_level(TS1_2_rev,     f'{TS1_2_rev:.1f}',     text_position=3)
-diagram.add_text_to_level(TS1_2_fwd_fwd, f'{TS1_2_fwd_fwd:.1f}', text_position=4)
-diagram.add_text_to_level(GSfinal,       f'{GSfinal:.1f}',       text_position=5)
+diagram.level_text(ground_state,  f'{ground_state:.1f}',  position=0)
+diagram.level_text(TS4,           f'{TS4:.1f}',           position=1)
+diagram.level_text(TS3,           f'{TS3:.1f}',           position=2)
+diagram.level_text(TS2_2_fwd,     f'{TS2_2_fwd:.1f}',     position=3)
+diagram.level_text(TS1_2_rev,     f'{TS1_2_rev:.1f}',     position=3)
+diagram.level_text(TS1_2_fwd_fwd, f'{TS1_2_fwd_fwd:.1f}', position=4)
+diagram.level_text(GSfinal,       f'{GSfinal:.1f}',       position=5)
 
-diagram.add_text_to_level(ground_state,  '0', text_placement='bottom', text_position=0)
-diagram.add_text_to_level(TS4,           '4', text_placement='bottom', text_position=1)
-diagram.add_text_to_level(TS3,           '3', text_placement='bottom', text_position=2)
-diagram.add_text_to_level(TS2_2_fwd,     ' ', text_placement='bottom', text_position=3)
-diagram.add_text_to_level(TS1_2_rev,     ' ', text_placement='bottom', text_position=3)
-diagram.add_text_to_level(TS1_2_fwd_fwd, ' ', text_placement='bottom', text_position=4)
-diagram.add_text_to_level(GSfinal,       ' ', text_placement='bottom', text_position=5)
+diagram.level_text(ground_state,  '0', placement='bottom', position=0)
+diagram.level_text(TS4,           '4', placement='bottom', position=1)
+diagram.level_text(TS3,           '3', placement='bottom', position=2)
+diagram.level_text(TS2_2_fwd,     ' ', placement='bottom', position=3)
+diagram.level_text(TS1_2_rev,     ' ', placement='bottom', position=3)
+diagram.level_text(TS1_2_fwd_fwd, ' ', placement='bottom', position=4)
+diagram.level_text(GSfinal,       ' ', placement='bottom', position=5)
 
 
 alpha = 0.4
@@ -60,7 +65,7 @@ diagram.link_levels(5, 6, alpha=alpha)
 
 
 
-diagram.plot_diagram()
+diagram.plot_diagram(show_ids=True)
 # plt.savefig("sym_energy_diagram.png", bbox_inches="tight", dpi=300)
 #             show_IDs=True)
 

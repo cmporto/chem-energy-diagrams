@@ -78,7 +78,7 @@ class EnergyDiagram:
         self.position_names = []
         self.text_offset = []
 
-        # Define class atributes to store the init variabes
+        # Define class atributes to store the init variables
         self.fig = fig
         self.ax = ax
         self.level_size = level_size
@@ -93,8 +93,8 @@ class EnergyDiagram:
     def energy_level(self, 
                      energy,
                      position,
-                     level_color = 'k',
-                     level_style = '-'):
+                     color = 'k',
+                     style = '-'):
         '''
         Method of the EnergyDiagram class.
         
@@ -122,12 +122,12 @@ class EnergyDiagram:
         
         self.energy.append(energy)
         self.positions.append(position)
-        self.level_colors.append(level_color)
-        self.level_linestyle.append(level_style)
+        self.level_colors.append(color)
+        self.level_linestyle.append(style)
         
         
 
-    def add_text_to_level(self,
+    def level_text(self,
                           energy,
                           text,
                           position = 0,
@@ -229,6 +229,7 @@ class EnergyDiagram:
     
     
     def plot_diagram(self,
+                     show_ids = False,
                      top_spine=False,
                      right_spine=False,
                      bottom_spine=True,
@@ -339,7 +340,23 @@ class EnergyDiagram:
                          alpha=self.link_alpha[i])
         
         
-      
+
+        # Show IDs for the levels to facilitate linking them. It's temporary
+        # because it's confusing. Should be changed to something easier like IDs.
+        if show_ids:
+            id_voffset = (max(self.energy) - min(self.energy)) * self.v_offset / 2
+            for i in range(len(self.energy)):
+                text_x_position = (self.level_size + self.space)*self.text_position[i] - self.h_offset / 2
+                self.ax.text(text_x_position, 
+                         self.text_energy[i] - id_voffset, 
+                         i,                            #plots ID number
+                         horizontalalignment='right',
+                         verticalalignment='top',
+                         fontsize='medium',
+                         color='b')
+
+
+
         # Plotting the texts
         voffset = (max(self.energy) - min(self.energy)) * self.v_offset
         for i in range(len(self.text)):
@@ -386,7 +403,9 @@ class EnergyDiagram:
                          fontsize='medium',
                          color=self.text_color[i])
 
-            
+
+
+
             
         # Setting the options for the graph
         # Figure size:
