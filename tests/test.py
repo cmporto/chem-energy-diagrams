@@ -64,12 +64,6 @@ diagram.link_levels(4, 6, alpha=alpha)
 diagram.link_levels(5, 6, alpha=alpha)
 
 
-
 diagram.plot_diagram(show_ids=True)
-# plt.savefig("sym_energy_diagram.png", bbox_inches="tight", dpi=300)
-#             show_IDs=True)
 
 plt.show()
-
-# plt.savefig("sym_energy_diagram.png", bbox_inches="tight", dpi=300)
-#             show_IDs=True)
