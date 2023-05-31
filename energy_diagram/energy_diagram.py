@@ -1,3 +1,11 @@
+import matplotlib
+from matplotlib.lines import Line2D
+from matplotlib import pyplot as plt
+from matplotlib.ticker import MultipleLocator
+from matplotlib.ticker import FormatStrFormatter
+
+
+
 class EnergyDiagram:
     """
     EnergyDiagram class.
@@ -122,9 +130,9 @@ class EnergyDiagram:
     def add_text_to_level(self,
                           energy,
                           text,
-                          text_color = 'k',
-                          text_position = 0,
-                          text_placement = 'top',
+                          position = 0,
+                          color = 'k',
+                          placement = 'top',
                           text_offset = -1):
         """
         Method of the EnergyDiagram class. It adds text to a level,
@@ -158,21 +166,21 @@ class EnergyDiagram:
         and right text, and vertically for the top and bottom texts.
         """
         
-        if text_placement not in ['top', 'bottom', 'left', 'right']:
+        if placement not in ['top', 'bottom', 'left', 'right']:
             raise ValueError('The variable text_placement must be one of the followin:\n"top", "bottom", "left" and "right".')
         
-        if text_placement in ['top', 'bottom'] and text_offset == -1:
+        if placement in ['top', 'bottom'] and text_offset == -1:
             text_offset = self.v_offset
         
-        if text_placement in ['left', 'right'] and text_offset == -1:
+        if placement in ['left', 'right'] and text_offset == -1:
             text_offset = self.h_offset
         
         
         self.text_energy.append(energy)
         self.text.append(text)
-        self.text_color.append(text_color)
-        self.text_placement.append(text_placement)
-        self.text_position.append(text_position)
+        self.text_color.append(color)
+        self.text_placement.append(placement)
+        self.text_position.append(position)
         self.text_offset.append(text_offset)
             
             
